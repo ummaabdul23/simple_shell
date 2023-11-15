@@ -1,8 +1,7 @@
 #include "shell.h"
 
-extern char **environ;
-
-/** handle_exit - Function to handle the exit command
+/**
+ * handle_exit - Function to handle the exit command
  * @arg: parameter
  */
 
@@ -12,6 +11,7 @@ void handle_exit(char *arg)
 	if (arg != NULL)
 	{
 		int status = atoi(arg);
+
 		exit(status);
 	}
 	else
@@ -20,11 +20,13 @@ void handle_exit(char *arg)
 	}
 }
 
-/** handle_env - Function to handle the env command
+/**
+ * handle_env - Function to handle the env command
  */
 
-void handle_env()
+void handle_env(void)
 {
+	char **environ;
 	int i;
 
 	printf("Current environment variables:\n");
@@ -34,7 +36,8 @@ void handle_env()
 	}
 }
 
-/** handle_setenv - Function to handle the setenv command
+/**
+ * handle_setenv - Function to handle the setenv command
  * @variable: --
  * @value: --
  */
@@ -47,7 +50,8 @@ void handle_setenv(char *variable, char *value)
 	}
 }
 
-/** handle_unsetenv - Function to handle the unsetenv command
+/**
+ * handle_unsetenv - Function to handle the unsetenv command
  * @variable: --
  */
 
@@ -59,7 +63,8 @@ void handle_unsetenv(char *variable)
 	}
 }
 
-/** handle_cd - Function to handle the cd command
+/**
+ * handle_cd - Function to handle the cd command
  * @dir: --
  */
 
